@@ -39,6 +39,12 @@ public class SignatureUtil {
         return hs.toString();
     }
 
+    /**
+     * 使用标准URL Encode编码。注意和JDK默认的不同，空格被编码为%20而不是+。
+     *
+     * @param s String字符串
+     * @return URL编码后的字符串
+     */
     public static String urlEncode(String s) {
         try {
             return URLEncoder.encode(s, "UTF-8").replaceAll("\\+", "%20");
